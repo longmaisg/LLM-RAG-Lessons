@@ -7,13 +7,13 @@ Don’t worry bros, here is the plan for genius like you:
 # DAY 1: LM Studio, Chainlit, Resume.
 
 ### Step 1: 
-Download LM Studio (to hold LLM model) -> download Mistral 7B -> turn on LM Studio server (aka localhost:1234)
+Download LM Studio (to hold LLM model) -> download Mistral 7B -> turn on LM Studio server (aka localhost:1234).
 
 ### Step 2:
-In Python conda, download Chainlit (to create user interface)
+In Python conda, download Chainlit (to create user interface).
 
 ### Step 3: 
-Download the simple code here https://github.com/longmaisg/LLM-RAG-Lessons/blob/main/test.py (it just forwards your prompt on Chainlit UI to LLM server on LM Studio)
+Download the simple code here https://github.com/longmaisg/LLM-RAG-Lessons/blob/main/test.py (it just forwards your prompt on Chainlit UI to LLM server on LM Studio).
 
 ### Step 4: 
 Run “chainlit run test.py”, et voila, you have your first LLM server with kool web interface. Congratulation!
