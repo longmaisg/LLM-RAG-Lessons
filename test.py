@@ -2,7 +2,7 @@ from openai import AsyncOpenAI
 import chainlit as cl
 client = AsyncOpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
 cl.instrument_openai()
-# how to run: chainlit run test.py
+# how to run: chainlit run -w test.py
 
 settings = {
     "model": "TheBloke/Mistral-7B-Instruct-v0.2-GGUF",
