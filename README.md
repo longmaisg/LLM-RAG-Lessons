@@ -25,4 +25,4 @@ Proudly update your CV with this statement: “**Build LLM server, LM Studio, Ch
 Show this magical Chainlit UI to your boss and ask for a raise.
 
 ### Step 7: 
-Your boss shows you the fastest route to the door. You visit my post again to read # DAY 2 coming soon.
+Your boss shows you the fastest route to the door. You visit my post again to read **# DAY 2** coming soon.
