@@ -1,7 +1,3 @@
-# LLM-RAG-Lessons
-Lessons to learn LLM/RAG the fastest way
-
-
 So you want to confidently update your CV with hot-and-sexy AI, LLM/RAG just like chatGPT, but the path is so foggy?
 
 
