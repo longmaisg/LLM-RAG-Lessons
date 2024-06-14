@@ -16,7 +16,7 @@ In Python conda, download Chainlit (to create user interface).
 Download the simple code here https://github.com/longmaisg/LLM-RAG-Lessons/blob/main/test.py (it just forwards your prompt on Chainlit UI to LLM server on LM Studio).
 
 ### Step 4: 
-Run “chainlit run test.py”, et voila, you have your first LLM server with kool web interface. Congratulation!
+Run “chainlit run -w test.py”, et voila, you have your first LLM server with kool web interface. Congratulation!
 
 ### Step 5: 
 Proudly update your CV with this statement: “**Build LLM server, LM Studio, Chainlit**”. Don’t worry, LLM is quite new so no one actually knows enough to blame you not skillful enough :).
