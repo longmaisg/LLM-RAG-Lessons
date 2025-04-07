@@ -31,10 +31,6 @@ def setup_chatgpt():
     # Set up OpenAI API key
     openai.api_key = os.getenv("OPENAI_API_KEY")  # Or use environment variable method
 
-    # start a new conversation
-    conversation = Conversation()
-    return conversation
-
 # Example usage
 if __name__ == "__main__":
 

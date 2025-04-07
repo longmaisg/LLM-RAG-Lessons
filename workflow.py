@@ -4,6 +4,9 @@ from llama_index.core.workflow import (
     Workflow,
     step,
 )
+import asyncio
+import chatgpt
+from chatgpt import Conversation
 
 # This code snippet defines a simple workflow using the LlamaIndex library.
 
@@ -21,6 +24,11 @@ async def main():
 
 
 if __name__ == "__main__":
-    import asyncio
+    # set up ChatGPT
+    chatgpt.setup_chatgpt()
+
+
+    # start a new conversation
+    conversation = Conversation()
 
     asyncio.run(main())
