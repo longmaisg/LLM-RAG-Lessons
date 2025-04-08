@@ -4,10 +4,11 @@ from conversation import Conversation
 
 class Conversation:
     messages = []
-    system_prompt = "You are a helpful assistant. You answer will be short and no more than 20 words."
+    system_prompt_get_keywords = "A user want to find best fitted video to learn french. From the prompt, extract up to 5 keywords to search youtube meaningfully."
+    system_prompt_rank_videos = "Given some videos with title + description + videoid, rank the best video based on the user prompt. Return only 1 videoid"
 
-    def __init__(self):
-        self.messages = [{"role": "system", "content": self.system_prompt}]
+    def __init__(self, system_prompt):
+        self.messages = [{"role": "system", "content": system_prompt}]
 
     def add_message(self, message, role="user"):
         if role not in ["user", "assistant"]:
@@ -34,8 +35,7 @@ def setup_chatgpt():
 # Example usage
 if __name__ == "__main__":
 
-    # Set up OpenAI API key
-    openai.api_key = os.getenv("OPENAI_API_KEY")  # Or use environment variable method
+    setup_chatgpt()
 
     # Example conversation
     conversation = Conversation()
