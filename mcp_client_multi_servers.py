@@ -22,17 +22,20 @@ async def run():
         tools = client.get_tools()  # -> cannot know which server the tool is from
 
         functions = []
-        for tool in tools:
-            function = {
-                "name": tool.name,
-                "description": tool.description,
-                "parameters": {
-                    "type": tool.args_schema.get("type"),
-                    "properties": tool.args_schema.get("properties"),
-                    "required": tool.args_schema.get("required"),
-                },
-            }
-            functions.append(function)
+        for session in client.sessions:
+            # List available tools
+            tools = await client.sessions.get(session).list_tools()
+            for tool in tools.tools:
+                function = {
+                    "name": tool.name + "___" + session,
+                    "description": tool.description,
+                    "parameters": {
+                        "type": tool.inputSchema.get("type"),
+                        "properties": tool.inputSchema.get("properties"),
+                        "required": tool.inputSchema.get("required"),
+                    },
+                }
+                functions.append(function)
 
         # Use ChatGPT to get the best tool
         openai.api_key = os.getenv("OPENAI_API_KEY")  # Or use environment variable method
@@ -49,11 +52,13 @@ async def run():
             )
             # Returning the extracted response
             name = response.choices[0].message.function_call.name
+            session = name.split("___")[1]
+            name = name.split("___")[0]
             arguments = response.choices[0].message.function_call.arguments
             print(f"response: name: {name} -- arguments: {arguments}")
 
             # Call a tool
-            result = await client.sessions.get("mcp_server").call_tool(name=name, arguments=json.loads(arguments))
+            result = await client.sessions.get(session).call_tool(name=name, arguments=json.loads(arguments))
             print(f"result: {result}")
         except Exception as e:
             print(str(e))
